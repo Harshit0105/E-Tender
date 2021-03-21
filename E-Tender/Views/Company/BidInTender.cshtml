@@ -1,0 +1,44 @@
+﻿@model E_Tender.ViewModel.BidViewModel
+
+@{
+    ViewData["Title"] = "BidInTender";
+}
+
+<h1>Bidding</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="BidInTender">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+            <div class="form-group" hidden>
+                <label asp-for="tender" class="control-label"></label>
+                <input asp-for="tender" class="form-control" />
+                <span asp-validation-for="tender" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="tenderName" class="control-label">Tender Name</label>
+                <input asp-for="tenderName" class="form-control" />
+                <span asp-validation-for="tenderName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="tenderName" class="control-label">Tender Name : </label>
+                <label class="control-label">@Model.tenderName</label>
+            </div>
+            <div class="form-group">
+                <label asp-for="amount" class="control-label"></label>
+                <input asp-for="amount" class="form-control" />
+                <span asp-validation-for="amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

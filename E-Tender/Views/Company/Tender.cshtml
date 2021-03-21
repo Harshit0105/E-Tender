@@ -1,0 +1,53 @@
+﻿@model IEnumerable<E_Tender.Models.Tender>
+
+@{
+    ViewData["Title"] = "Tender";
+}
+
+<h1>Tender</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tender_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Base_price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Starting_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ending_Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tender_name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Base_price)
+            </td>            
+            <td>
+                @Html.DisplayFor(modelItem => item.Starting_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ending_Date)
+            </td>
+            <td>                
+                <a asp-action="BidInTender" asp-route-id="@item.Tender_Id">Bid</a>                 
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

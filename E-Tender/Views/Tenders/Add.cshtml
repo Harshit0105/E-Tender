@@ -1,0 +1,50 @@
+﻿@model E_Tender.NewFolder.TenderViewModel
+
+@{
+    ViewData["Title"] = "Add";
+}
+
+<h1>Add</h1>
+
+<h4>TenderViewModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Add">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Base_price" class="control-label"></label>
+                <input asp-for="Base_price" class="form-control" />
+                <span asp-validation-for="Base_price" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="status" /> @Html.DisplayNameFor(model => model.status)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="Starting_Date" class="control-label"></label>
+                <input asp-for="Starting_Date" class="form-control" />
+                <span asp-validation-for="Starting_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ending_Date" class="control-label"></label>
+                <input asp-for="Ending_Date" class="form-control" />
+                <span asp-validation-for="Ending_Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

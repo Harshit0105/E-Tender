@@ -1,0 +1,49 @@
+﻿@model IEnumerable<E_Tender.Models.Bidding>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tender
+            </th>
+            <th>
+                Company
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.selected)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.tender_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.company_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.selected)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Bid_Id">Edit</a> |                
+                <a asp-action="Delete" asp-route-id="@item.Bid_Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
